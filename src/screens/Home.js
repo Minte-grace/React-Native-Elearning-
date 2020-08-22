@@ -1,223 +1,210 @@
-import React from 'react'
-import {View,Text,Image,ImageBackground,TouchableOpacity} from 'react-native'
-import {TextInput,ScrollView} from 'react-native-gesture-handler'
-import Icon from '@expo/vector-icons/Ionicons'
-import Couches from '../common/Couches'
-import New from '../common/New'
-import Best from '../common/Best'
+import React from 'react';
+import {View,Text,Image,ImageBackground,TouchableOpacity} from 'react-native';
+import {ScrollView,TextInput} from 'react-native-gesture-handler';
+import Icon from '@expo/vector-icons/Entypo';
+import Posts from '../screens/Posts'
 
 
-export default class Home extends React.Component {
+export default class Home extends React.Component{
+    state={
+        popularSelected:true
+    }
+    onTabPressed=()=>{
+        this.setState({popularSelected:!this.state.popularSelected})
+    }
     render(){
         return(
-            <ScrollView
+          <ScrollView
             showsVerticalScrollIndicator={false}
             style={{
-                backgroundColor:"#fff",
-                paddingHorizontal:20
+                height:"100%",
+                backgroundColor:"#044244"
             }}
-            >
+          >
+              <View style={{
+                  height:260,
+                  width:"100%",
+                  paddingHorizontal:35
+              }}>
+                  <View style={{
+                      flexDirection:"row",
+                      width:"100%",
+                      paddingTop:40,
+                      alignItems:"center"
+                  }}>
+                      <View style={{
+                          width:"50%"
+                      }}>
+                          <Image source={require('../images/Untitled.png')}
+                            style={{width:20,height:20}}/>
+                      </View>
+                      <View style={{
+                          width:"50%",
+                          alignItems:"flex-end",
+                      }}>
+                          <Icon name = "dots-two-vertical"
+                            size={22}
+                            color="#d2d2d2"
+                            style={{
+                                marginRight:-7,
+                                marginTop:7
+                            }}/>
+                      </View>
+                  </View>
+
+
+                <Text style={{
+                    fontFamily:"Bold",
+                    fontSize:25,
+                    color:"#FFF",
+                    paddingVertical:25
+                }}>Find Awesome Photos</Text>
+
                 <View style={{
                     flexDirection:"row",
-                    width:"100%",
-                    marginTop:40,
+                    borderColor:"#9ca1a2",
+                    borderRadius:20,
+                    borderWidth:0.2,
+                    paddingVertical:5,
                     alignItems:"center"
                 }}>
-                    <View style={{
-                        width:"50%"
-                    }}>
-                        <Text style={{
-                            fontFamily:"Bold",
-                            fontSize:22
-                        }}>Furniture</Text>
-                    </View>
-                    <View style={{
-                        width:"50%",
-                        alignItems:"flex-end"
-                    }}>
-                        <Image
-                          source={require('../images/bag-2.png')}
-                          style={{width:16,height:20}}
-                        />
-                    </View>
+                    <TextInput
+                        placeholder="search inispiration ..."
+                        style={{
+                            paddingHorizontal:20,
+                            fontFamily:"Medium",
+                            fontSize:11,
+                            width:"90%",
+                            color:"#9ca1a2"
+                        }}
+                    />
+                    <Icon name="magnifying-glass"
+                          size={15}
+                          color="#9ca1a2"/>
                 </View>
 
-                <View style={{
-                    flexDirection:"row",
-                    alignItems:"center",
-                    width:"100%",
-                    marginVertical:30
-                }}>
-                    <View style={{
-                        flexDirection:"row",
-                        alignItems:"center",
-                        elevation:2,
-                        width:"85%",
-                        backgroundColor:"#FFF",
-                        paddingHorizontal:20,
-                        height:35,
-                        borderRadius:10,
-                        marginLeft:1
-                    }}>
-                        <Icon name="ios-search"
-                           size={22}
-                           color="#4f4a4a"
-                           />
-                            <TextInput
-                                placeholder="Search unique furniture..."
-                                style={{
-                                fontFamily:"Medium",
-                                paddingHorizontal:10,
-                                fontSize:12
-                            }}
-                            />
-                            </View>
-                            
-                            
-                            <View style={{
-                                alignItems:"center",
-                                elevation:2,
-                                width:"15%",
-                                backgroundColor:"#FFF",
-                                marginLeft:5,
-                                height:35,
-                                borderRadius:10,
-                                marginLeft:1,
-                                justifyContent:"center"
-                            }}>
-                                <Image
-                                source={require('../images/sort.png')}
-                                style={{
-                                    width:18,height:25
-                                }}
-                                />
-                            </View>
-                   
-                </View>
+              </View>
+
+              <View style={{
+                  backgroundColor:"#FFF",
+                  borderTopLeftRadius:40,
+                  borderTopRightRadius:40,
+                  height:1000,
+                  paddingHorizontal:35
+              }}>
+                  <View style={{
+                      flexDirection:"row",
+                      paddingTop:20
+                  }}>
+                      <TouchableOpacity
+                        onPress={this.onTabPressed}
+                        style={{
+                            borderBottomColor:this.state.popularSelected ? "#044244":"#FFF",
+                            borderBottomWidth:4,
+                            paddingVertical:6
+                        }}
+                      >
+                          <Text style={{
+                              fontFamily:"Bold",
+                              color:this.state.popularSelected ? "#044244":"#9ca1a2"
+                          }}>MOST POPULAR</Text>
+                      </TouchableOpacity>
 
 
-                <View style={{
-                    flexDirection:"row",
-                    width:"100%",
-                    alignItems:"center"
-                }}>
-                    <Text style={{
-                        fontFamily:"Bold",
-                        fontSize:18,
-                        color:"#4f4a4a"
-                    }}>
-                        Modern
-                    </Text>
-                    <View style={{
-                        width:5,
-                        height:5,
-                        borderRadius:5,
-                        marginHorizontal:5,
-                        backgroundColor:"#4f4a4a"
-                    }}></View>
-                    <Text style={{
-                        fontFamily:"Bold",
-                        fontSize:9,
-                        color:"#4f4a4a"
-                    }}>
-                        Good Quality items
-                    </Text>
-                </View>
+                      <TouchableOpacity
+                        onPress={this.onTabPressed}
+                        style={{
+                            borderBottomColor:this.state.popularSelected ? "#FFF":"#044244",
+                            borderBottomWidth:4,
+                            paddingVertical:6,
+                            marginLeft:30
+                        }}
+                      >
+                          <Text style={{
+                              fontFamily:"Bold",
+                              color:this.state.popularSelected ? "#9ca1a2":"#044244"
+                          }}>RECENT</Text>
+                      </TouchableOpacity>
+                  </View>
+
+                  <View style={{
+                      flexDirection:"row"
+                  }}>
+                      <Posts
+                        onPress={()=>this.props.navigation.navigate('Detail')}
+                        name="Max Bator"
+                        profile={require('../images/p1.jpg')}
+                        photo={require('../images/5.jpg')}
+                      />
+
+                      <View style={{
+                          height:160,
+                          backgroundColor:"#3c636c",
+                          width:20,
+                          marginLeft:20,
+                          marginTop:120,
+                          borderTopLeftRadius:20,
+                          borderBottomLeftRadius:20
+                      }}>
+
+                      </View>
+
+                  </View>
 
 
-                    <ScrollView
-                     horizontal
-                     showsHorizontalScrollIndicator={false}
-                    >
-                       <Couches
-                            src={require('../images/1.png')}
-                            name="Beautiful Couches"
-                            onPress={()=>this.props.navigation.navigate('Detail')}
-                       
-                       />
-                         <Couches
-                            src={require('../images/2.png')}
-                            name="Autobe best chair"
-                            onPress={()=>this.props.navigation.navigate('Detail')}
-                       
-                       />
-                         <Couches
-                            src={require('../images/1.png')}
-                            name="Beautiful Couches"
-                            onPress={()=>this.props.navigation.navigate('Detail')}
-                       
-                       />
 
-                    </ScrollView>
+                  <View style={{
+                      flexDirection:"row"
+                  }}>
+                     
+                      <View style={{
+                          height:160,
+                          backgroundColor:"#3c636c",
+                          width:20,
+                          marginLeft:-40,
+                          marginRight:20,
+                          marginTop:120,
+                          borderTopRightRadius:20,
+                          borderBottomRightRadius:20
+                      }}>
 
+                      </View>
 
-                    <View style={{
-                        flexDirection:"row",
-                        marginTop:30,
-                        marginBottom:10,
-                        alignItems:"center"
-                    }}>
-                        <Text style={{
-                            fontFamily:"Bold",
-                            color:"#4f4a4a",
-                            fontSize:20
-                        }}>
-                            New Arrivals
-                        </Text>
-                        <View style={{
-                            height:5,
-                            width:5,
-                            borderRadius:5,
-                            backgroundColor:"#4f4a4a",
-                            marginHorizontal:4
-                        }}>
-                        </View>
-                        <Text style={{
-                            fontFamily:"Bold",
-                            fontSize:10,
-                            color:"#4f4a4a"
-                        }}>
-                            Good Quality items
-                        </Text>
-                    </View>
+                      <Posts
+                        onPress={()=>this.props.navigation.navigate('Detail')}
+                        name="Erka Berka"
+                        profile={require('../images/p2.jpg')}
+                        photo={require('../images/6.jpg')}
+                      />
 
-                    <ScrollView 
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    >
+                  </View>
 
-                        <New
-                         src={require('../images/sofa.png')}
-                        />
-                        <New
-                        src={require('../images/lr.png')}
-                        />
-                        <New
-                        src={require('../images/sofa.png')}
-                        />
-                    </ScrollView>
+                  <View style={{
+                      flexDirection:"row"
+                  }}>
+                      <Posts
+                        onPress={()=>this.props.navigation.navigate('Detail')}
+                        name="Max Bator"
+                        profile={require('../images/p1.jpg')}
+                        photo={require('../images/3.jpg')}
+                      />
 
-                    <Text style={{
-                        marginTop:20,
-                        color:"#4f4a4a",
-                        fontSize:18,
-                        fontFamily:"Bold"
-                    }}>
-                        Best Sellers
-                    </Text>
-            
-            
-            <ScrollView
-            showsHorizontalScrollIndicator={false}
-            horizontal>
+                      <View style={{
+                          height:160,
+                          backgroundColor:"#3c636c",
+                          width:20,
+                          marginLeft:20,
+                          marginTop:120,
+                          borderTopLeftRadius:20,
+                          borderBottomLeftRadius:20
+                      }}>
 
-                    <Best/>
-                    <Best/>
-                    <Best/>
-            </ScrollView>
+                      </View>
 
+                  </View>
+              </View>
 
-            </ScrollView>
-        );
+          </ScrollView>
+        )
     }
 }
