@@ -1,0 +1,77 @@
+Arguments: 
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add react-navigation-progress-circle
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/grace/Android/Sdk/emulator:/home/grace/Android/Sdk/tools:/home/grace/Android/Sdk/tools/bin:/home/grace/Android/Sdk/platform-tools:/home/grace/.yarn/bin/:/home/grace/Android/Sdk/emulator:/home/grace/Android/Sdk/tools:/home/grace/Android/Sdk/tools/bin:/home/grace/Android/Sdk/platform-tools:/home/grace/.yarn/bin/
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.18.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/react-navigation-progress-circle: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66987:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140748:22)
+      at Request.emit (events.js:315:20)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141720:10)
+      at Request.emit (events.js:315:20)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141642:12)
+      at Object.onceWrapper (events.js:421:28)
+      at IncomingMessage.emit (events.js:327:22)
+      at endReadableNT (_stream_readable.js:1220:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "@react-native-community/masked-view": "0.1.10",
+      "expo": "~38.0.8",
+      "expo-av": "~8.2.1",
+      "expo-status-bar": "^1.0.2",
+      "react": "~16.11.0",
+      "react-dom": "~16.11.0",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+      "react-native-app-intro": "^1.1.5",
+      "react-native-app-intro-slider": "^4.0.4",
+      "react-native-gesture-handler": "~1.6.0",
+      "react-native-modalize": "^2.0.6",
+      "react-native-onboarding-swiper": "^1.1.4",
+      "react-native-percentage-circle": "^1.0.7",
+      "react-native-progress-circle": "^2.1.0",
+      "react-native-reanimated": "~1.9.0",
+      "react-native-safe-area-context": "~3.0.7",
+      "react-native-screens": "~2.9.0",
+      "react-native-stars": "^1.2.1",
+      "react-native-swiper": "^1.6.0",
+      "react-native-vector-icons": "^7.0.0",
+      "react-native-video": "^5.1.0-alpha8",
+      "react-native-video-player": "^0.10.1",
+      "react-native-web": "~0.11.7",
+      "react-navigation": "^4.4.0",
+      "react-navigation-stack": "^2.8.2"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.8.6",
+      "babel-preset-expo": "~8.1.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
