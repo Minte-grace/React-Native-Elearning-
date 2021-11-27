@@ -23,11 +23,11 @@ export default class Cources extends React.Component{
                     <TouchableOpacity
                         onPress={()=>this.props.navigation.navigate("Home")}
                         style={{
-                            paddingHorizontal:10,
-                            paddingVertical:13,
-                            borderRadius:10,
-                            marginTop:30,
-                            backgroundColor:"#8bbcdb"
+//                             paddingHorizontal:10,
+//                             paddingVertical:13,
+//                             borderRadius:10,
+//                             marginTop:30,
+//                             backgroundColor:"#8bbcdb"
                         }}
                     >
                         <Image
